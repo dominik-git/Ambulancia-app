@@ -12,6 +12,7 @@ import {MatTableModule} from "@angular/material/table";
 import {AngularFireModule} from "@angular/fire";
 import {environment} from "../environments/environment";
 import {AngularFirestoreModule} from "@angular/fire/firestore";
+import {MatSortModule} from "@angular/material/sort";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {AngularFirestoreModule} from "@angular/fire/firestore";
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

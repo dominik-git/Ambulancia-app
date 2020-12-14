@@ -1,7 +1,7 @@
 export class OrderModel {
 
   id:string;
-  date:string;
+  date:Date;
   phone:string;
   firstName: string;
   lastName: string;
