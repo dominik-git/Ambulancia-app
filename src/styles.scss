@@ -2,3 +2,17 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root
+{
+  --blue: #007bff; // or any global you wish to share with components
+  --white: white;
+
+
+}
+
+.primary-lighter {
+  background: var(--blue);
+  color: var(--white); ;
+
+}

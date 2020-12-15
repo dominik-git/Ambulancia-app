@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {PersonsListComponent} from "./components/persons-list/persons-list.component";
-import {OrderComponent} from "./components/order/order.component";
-import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
-import {HomeComponent} from "./components/home/home.component";
+import {PersonsListComponent} from "./tabs/persons-list/persons-list.component";
+import {OrderComponent} from "./tabs/order/order.component";
+import {PageNotFoundComponent} from "./tabs/page-not-found/page-not-found.component";
+import {HomeComponent} from "./tabs/home/home.component";
 
 
 const routes: Routes = [

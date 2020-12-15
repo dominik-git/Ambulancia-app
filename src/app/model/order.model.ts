@@ -6,5 +6,6 @@ export class OrderModel {
   firstName: string;
   lastName: string;
   type: number;
+  examined: boolean;
 
 }
