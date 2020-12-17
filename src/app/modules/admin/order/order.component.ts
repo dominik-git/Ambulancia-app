@@ -1,14 +1,10 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
-import {PatientModel} from "../../model/patient.model";
-import {PatientResourceServiceService} from "../../services/patient-resource-service.service";
-import {OrdersResourceServiceService} from "../../services/orders-resource-service.service";
-import {OrderModel} from "../../model/order.model";
-import * as moment from 'moment';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatSort, MatSortable} from "@angular/material/sort";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatDatepickerInputEvent} from "@angular/material/datepicker";
 import {FormControl} from "@angular/forms";
-import {AngularFirestore} from "@angular/fire/firestore";
+import {OrdersResourceServiceService} from "../../../services/orders-resource-service.service";
+
 
 @Component({
   selector: 'app-order',

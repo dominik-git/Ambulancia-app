@@ -1,0 +1,7 @@
+<nav class="nav nav-pills nav-fill" >
+  <a class="nav-item nav-link " [routerLink]="['home']"  routerLinkActive="active">Domov </a>
+  <a class="nav-item nav-link " [routerLink]="['orders']"  routerLinkActive="active">Objednavky</a>
+  <a class="nav-item nav-link " [routerLink]="['signup']"  routerLinkActive="active">Pacienti</a>
+  <a ><button class="logout" (click)="logout()">Logout</button></a>
+</nav>
+<router-outlet></router-outlet>
