@@ -53,6 +53,5 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'my-class': row.examined}"></tr>
 </table>
-
 <app-spinner [visible]="isSpinnerVisible" [delay]="500"></app-spinner>
 

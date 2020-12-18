@@ -1,12 +1,12 @@
 import {RouterModule, Routes} from "@angular/router";
-import {LoginComponent} from "../core/login/login.component";
-import {SignupComponent} from "../admin/signup/signup.component";
-import {AuthGuard} from "../../auth/auth.guard";
+import {LoginComponent} from "../core/tabs/login/login.component";
+import {SignupComponent} from "../admin/tabs/signup/signup.component";
+import {AuthGuard} from "../core/services/auth.guard";
 
 import {NgModule} from "@angular/core";
 import {UserComponent} from "./user.component";
-import {HomeComponent} from "./home/home.component";
-import {OrderComponent} from "./order/order.component";
+import {HomeComponent} from "./tabs/home/home.component";
+import {OrderComponent} from "./tabs/order/order.component";
 
 
 const routes: Routes = [

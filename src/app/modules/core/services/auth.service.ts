@@ -1,12 +1,8 @@
 import {Injectable, NgZone} from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/auth";
 import {Router} from "@angular/router";
-import firebase from "firebase";
-import {BehaviorSubject, Observable} from "rxjs";
-import {AngularFirestore, AngularFirestoreDocument} from "@angular/fire/firestore";
-import {switchMap} from "rxjs/operators";
-import {EMPTY} from 'rxjs'
-import {User} from "../model/user.model";
+import {BehaviorSubject,} from "rxjs";
+import {AngularFirestore } from "@angular/fire/firestore";
 
 
 @Injectable({

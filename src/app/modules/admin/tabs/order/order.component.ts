@@ -1,9 +1,10 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {MatSort, MatSortable} from "@angular/material/sort";
+import {MatSort} from "@angular/material/sort";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatDatepickerInputEvent} from "@angular/material/datepicker";
 import {FormControl} from "@angular/forms";
-import {OrdersResourceServiceService} from "../../../services/orders-resource-service.service";
+import {OrdersResourceServiceService} from "../../../core/services/orders-resource-service.service";
+
 
 
 @Component({

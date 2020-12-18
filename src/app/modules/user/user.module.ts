@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { OrderComponent } from './order/order.component';
-import { HomeComponent } from './home/home.component';
+
 import {UserRoutingModule} from "./user-routing.module";
-import { UserComponent } from './user.component';
 import {CoreModule} from "../core/core.module";
+import {UserComponent} from "./user.component";
+import {HomeComponent} from "./tabs/home/home.component";
+import {OrderComponent} from "./tabs/order/order.component";
 
 @NgModule({
   declarations: [OrderComponent, HomeComponent, UserComponent],

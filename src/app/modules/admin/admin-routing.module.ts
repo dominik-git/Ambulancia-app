@@ -1,9 +1,9 @@
 import {RouterModule, Routes} from "@angular/router";
-import {SignupComponent} from "./signup/signup.component";
+import {SignupComponent} from "./tabs/signup/signup.component";
 import {NgModule} from "@angular/core";
 import {AdminComponent} from "./admin.component";
-import {HomeComponent} from "../user/home/home.component";
-import {OrderComponent} from "./order/order.component";
+import {HomeComponent} from "../user/tabs/home/home.component";
+import {OrderComponent} from "./tabs/order/order.component";
 
 
 const routes: Routes = [
