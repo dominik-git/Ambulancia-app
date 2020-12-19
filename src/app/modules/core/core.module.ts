@@ -14,6 +14,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import {CommonModule} from "@angular/common";
 import {SpinnerComponent} from "./components/spinner/spinner.component";
+import {MatRadioModule} from "@angular/material/radio";
+import {ToastrModule} from "ngx-toastr";
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import {SpinnerComponent} from "./components/spinner/spinner.component";
     MatButtonModule,
     MatProgressSpinnerModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatRadioModule,
+    ToastrModule.forRoot(),
+    MatToolbarModule,
 
   ],
   exports:[
@@ -46,6 +52,8 @@ import {SpinnerComponent} from "./components/spinner/spinner.component";
     MatProgressSpinnerModule,
     ReactiveFormsModule,
     SpinnerComponent,
+    MatRadioModule,
+    MatToolbarModule
   ]
 })
 export class CoreModule { }

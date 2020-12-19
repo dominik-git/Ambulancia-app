@@ -1,8 +1,4 @@
 import {RouterModule, Routes} from "@angular/router";
-import {LoginComponent} from "../core/tabs/login/login.component";
-import {SignupComponent} from "../admin/tabs/signup/signup.component";
-import {AuthGuard} from "../core/services/auth.guard";
-
 import {NgModule} from "@angular/core";
 import {UserComponent} from "./user.component";
 import {HomeComponent} from "./tabs/home/home.component";

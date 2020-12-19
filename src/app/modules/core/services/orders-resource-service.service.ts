@@ -40,7 +40,8 @@ export class OrdersResourceServiceService {
       ref => ref
         .where('date.seconds', '>=', startDateTimeStamp)
         .where('date.seconds', '<=', endDateTimeStamp)
-    );
+        .orderBy('date.seconds')
+    )
     return ordersCollection.snapshotChanges().pipe(
       map(actions => {
         return actions.map(a => {

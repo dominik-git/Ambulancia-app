@@ -1,9 +1,11 @@
 import {RouterModule, Routes} from "@angular/router";
-import {SignupComponent} from "./tabs/signup/signup.component";
 import {NgModule} from "@angular/core";
 import {AdminComponent} from "./admin.component";
 import {HomeComponent} from "../user/tabs/home/home.component";
 import {OrderComponent} from "./tabs/order/order.component";
+import {PersonsListComponent} from "./tabs/persons-list/persons-list.component";
+import {ListComponent} from "./tabs/persons-list/components/list/list.component";
+import {RegisterComponent} from "./tabs/persons-list/components/register/register.component";
 
 
 const routes: Routes = [
@@ -19,7 +21,12 @@ const routes: Routes = [
         path: 'orders', component: OrderComponent,
       },
       {
-        path: 'signup', component: SignupComponent,
+        path: 'patients', component: PersonsListComponent,
+        children:[
+          { path: '', redirectTo: 'list', pathMatch: 'full' },
+          {path: 'list', component: ListComponent},
+          {path: 'create', component: RegisterComponent},
+        ]
       }
 
 

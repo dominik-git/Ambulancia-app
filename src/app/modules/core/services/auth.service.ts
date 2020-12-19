@@ -3,6 +3,8 @@ import {AngularFireAuth} from "@angular/fire/auth";
 import {Router} from "@angular/router";
 import {BehaviorSubject,} from "rxjs";
 import {AngularFirestore } from "@angular/fire/firestore";
+import {PatientModel} from "../model/patient.model";
+import {ToastService} from "./toast.service";
 
 
 @Injectable({
@@ -10,7 +12,13 @@ import {AngularFirestore } from "@angular/fire/firestore";
 })
 export class AuthService {
 
-  constructor(private ngZone: NgZone, private afAuth: AngularFireAuth, private firestore: AngularFirestore, private router: Router) {
+  constructor(
+    private ngZone: NgZone,
+    private afAuth: AngularFireAuth,
+    private firestore: AngularFirestore,
+    private router: Router,
+    private toastService:ToastService
+  ) {
   }
 
   public currentUser: any;
@@ -24,32 +32,37 @@ export class AuthService {
   }
 
 
-  signUp(email: string, password: string) {
-    this.afAuth.createUserWithEmailAndPassword(email, password)
+  signUp(patient:PatientModel) {
+    this.afAuth.createUserWithEmailAndPassword(patient.email, patient.password)
       .then((userResponse) => {
         // add the user to the "users" database
+        const {dob,firstName,lastName,gender,phone,email,password} = patient;
         let user = {
           id: userResponse.user.uid,
           username: userResponse.user.email,
           role: "user",
+          firstName,
+          lastName,
+          gender,
+          phone,
+          password,
+          dob,
+          email
         }
         //add the user to the database
         this.firestore.collection("users").add(user)
           .then(user => {
-            user.get().then(x => {
-              //return the user data
-              console.log(x.data());
-              this.currentUser = x.data();
-              this.setUserStatus(this.currentUser);
-              this.router.navigate(["/"]);
-            })
-          }).catch(err => {
-          console.log(err);
-        })
+            this.toastService.showSuccess("Pacient bol vytvoreny");
+          })
+          .catch(err => {
+            console.log(err);
+            this.toastService.showError(err);
+          })
 
       })
       .catch((err) => {
         console.log("An error ocurred: ", err);
+        this.toastService.showError(err);
       })
 
   }
@@ -103,7 +116,7 @@ export class AuthService {
 
             // @ts-ignore
             if (userRef.data().role !== "admin") {
-               this.ngZone.run(() => this.router.navigate(["/user"]));
+              this.ngZone.run(() => this.router.navigate(["/user"]));
             } else {
               this.ngZone.run(() => this.router.navigate(["/admin"]));
             }
@@ -115,6 +128,6 @@ export class AuthService {
         //hence the redirect to the login
         // this.ngZone.run(() => this.router.navigate(["/login"]));
       }
-    })
+    }).then(r =>{})
   }
 }

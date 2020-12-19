@@ -1,1 +1,14 @@
-<p>persons-list works!</p>
+<nav class="navbar">
+  <ul class="nav nav-pills nav-fill">
+    <li class="nav-item">
+      <a class=" nav-link link" [routerLink]="['list']"  routerLinkActive="active">Zoznam pacietov </a>
+    </li>
+    <li class="nav-item">
+      <a class=" nav-link link " [routerLink]="['create']"  routerLinkActive="active">Vytvorit</a>
+    </li>
+
+  </ul>
+</nav>
+<router-outlet></router-outlet>
+
+

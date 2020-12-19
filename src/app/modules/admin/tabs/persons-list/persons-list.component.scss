@@ -1,0 +1,16 @@
+@import 'src/variables.scss';
+
+nav{
+  background: $white;
+  border-bottom: 1px solid #d7d7d7;
+
+}
+
+a{
+  color: $grey;
+}
+
+.nav-link.active{
+  color: $blue-dark;
+  background:none;
+}

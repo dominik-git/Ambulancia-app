@@ -8,7 +8,7 @@ import {LoginComponent} from "./modules/core/tabs/login/login.component";
 // const routes: Routes = [
 //   { path: "", redirectTo: "/login", pathMatch: "full" },
 //   { path: 'login', component: LoginComponent },
-//   { path: 'signup', component: SignupComponent },
+//   { path: 'register', component: SignupComponent },
 //   { path: 'home', canActivate:[AuthGuard], data: {roles: ["user", "admin"]} ,component: HomeComponent, },
 //   { path: 'persons', component: PersonsListComponent },
 //   { path: 'orders', component: OrderComponent },
