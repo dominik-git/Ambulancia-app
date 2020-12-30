@@ -14,6 +14,7 @@ import {LoginComponent} from "./modules/core/tabs/login/login.component";
 //   { path: 'orders', component: OrderComponent },
 //   { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
 // ];
+
 const routes: Routes = [
   {path: "", redirectTo: "/login", pathMatch: "full"},
   {path: 'login', component: LoginComponent},
