@@ -1,10 +1,23 @@
+<mat-card>
+  <mat-card-title>Login</mat-card-title>
+<mat-card-content>
 <form (ngSubmit)="login(loginForm.value)" [formGroup]="loginForm">
-  <p>Login with Email and Password.</p>
-  <label >Email:</label>
-  <input type="email" name="email" formControlName="email">
+<p>
+  <mat-form-field>
+    <input type="email" name="email" matInput placeholder="Username" formControlName="email">
+  </mat-form-field>
+</p>
 
-  <label>Password:</label>
-  <input type="password" name="password" formControlName="password">
+<p>
+  <mat-form-field>
+    <input type="password" name="password" matInput placeholder="Password" formControlName="password">
+  </mat-form-field>
+</p>
 
-  <input type="submit" [disabled]="!loginForm.valid" value="Log In">
+<div class="button">
+  <button type="submit" mat-button >Login</button>
+</div>
+
 </form>
+</mat-card-content>
+</mat-card>

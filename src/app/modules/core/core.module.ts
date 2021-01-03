@@ -18,6 +18,7 @@ import {MatRadioModule} from "@angular/material/radio";
 import {ToastrModule} from "ngx-toastr";
 import {MatToolbarModule} from "@angular/material/toolbar";
 
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [SpinnerComponent,LoginComponent],
@@ -38,6 +39,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     ToastrModule.forRoot(),
     MatToolbarModule,
 
+    MatCardModule,
   ],
   exports:[
     CommonModule,
@@ -53,7 +55,9 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     ReactiveFormsModule,
     SpinnerComponent,
     MatRadioModule,
-    MatToolbarModule
+    MatToolbarModule,
+
+    MatCardModule
   ]
 })
 export class CoreModule { }
