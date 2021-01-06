@@ -15,7 +15,7 @@
 </p>
 
 <div class="button">
-  <button type="submit" mat-button >Login</button>
+  <button type="submit" mat-button [disabled]="!loginForm.valid">Login</button>
 </div>
 
 </form>

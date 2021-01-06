@@ -19,9 +19,10 @@ import {ToastrModule} from "ngx-toastr";
 import {MatToolbarModule} from "@angular/material/toolbar";
 
 import {MatCardModule} from "@angular/material/card";
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
-  declarations: [SpinnerComponent,LoginComponent],
+  declarations: [SpinnerComponent,LoginComponent, FooterComponent],
   imports: [
     CommonModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
@@ -57,7 +58,8 @@ import {MatCardModule} from "@angular/material/card";
     MatRadioModule,
     MatToolbarModule,
 
-    MatCardModule
+    MatCardModule,
+    FooterComponent 
   ]
 })
 export class CoreModule { }
