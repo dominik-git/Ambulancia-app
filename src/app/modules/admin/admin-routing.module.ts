@@ -1,7 +1,7 @@
 import {RouterModule, Routes} from "@angular/router";
 import {NgModule} from "@angular/core";
 import {AdminComponent} from "./admin.component";
-import {HomeComponent} from "../user/tabs/home/home.component";
+import {HomeComponent} from "../admin/tabs/home/home.component";
 import {OrderComponent} from "./tabs/order/order.component";
 import {PersonsListComponent} from "./tabs/persons-list/persons-list.component";
 import {ListComponent} from "./tabs/persons-list/components/list/list.component";

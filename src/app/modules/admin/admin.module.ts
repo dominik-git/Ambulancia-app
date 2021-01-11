@@ -9,10 +9,11 @@ import {ListComponent} from './tabs/persons-list/components/list/list.component'
 import {RegisterComponent} from "./tabs/persons-list/components/register/register.component";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import { HomeComponent } from './tabs/home/home.component';
 
 
 @NgModule({
-  declarations: [OrderComponent, PersonsListComponent, AdminComponent, RegisterComponent, ListComponent],
+  declarations: [OrderComponent, PersonsListComponent, AdminComponent, RegisterComponent, ListComponent, HomeComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
