@@ -1,8 +1,49 @@
 /* You can add global styles to this file, and also import other style files */
 @import "variables.scss";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html {
+  font-size: 14px;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-size: 14px;
+  height: 100%;
+  overflow: hidden;
+
+
+}
+html app-root, body app-root app-admin {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+}
+
+
+
+app-root{
+    /* The image used */
+    background-image: url("https://www.bistatedev.org/wp-content/uploads/2017/08/iStock-532963888-1170x691.jpg");
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 100px;
+  line-height: 100px;
+}
+
 
 
 .primary-lighter {

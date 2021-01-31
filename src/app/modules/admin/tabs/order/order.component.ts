@@ -19,6 +19,7 @@ export class OrderComponent implements OnInit {
   date = new FormControl(new Date());
   selectedDate: Date;
   isSpinnerVisible: boolean;
+  clients:any =[];
 
   constructor(private orderResourceServiceService: OrdersResourceServiceService) {
   }
@@ -77,6 +78,8 @@ export class OrderComponent implements OnInit {
     this.isSpinnerVisible = true
     this.orderResourceServiceService.getOrdersByDate(date).subscribe((response) => {
       this.dataSource = new MatTableDataSource(response);
+      console.log(response)
+      this.clients = response;
       this.isSpinnerVisible = false
     });
   }

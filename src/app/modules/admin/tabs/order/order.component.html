@@ -1,12 +1,14 @@
-<mat-form-field appearance="fill">
+<mat-form-field appearance="fill" >
   <mat-label>Value binding</mat-label>
   <input matInput [matDatepicker]="picker3" [value]="date.value" (dateChange)="addEvent($event)">
   <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
   <mat-datepicker #picker3></mat-datepicker>
 </mat-form-field>
 
-<table mat-table #table [dataSource]="dataSource" class="mat-elevation-z8" matSort matSortActive="date"
-       matSortDirection="desc">
+<div *ngIf="clients.length == 0">Prazdny list</div>
+
+<table mat-table #table [dataSource]="dataSource" class="mat-elevation-z8" matSort matSortActive="date" matSortDirection="desc" *ngIf="clients.length >0"
+>
 
   <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
