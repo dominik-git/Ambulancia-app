@@ -4,6 +4,8 @@ import {MatTableDataSource} from "@angular/material/table";
 import {MatDatepickerInputEvent} from "@angular/material/datepicker";
 import {FormControl} from "@angular/forms";
 import {OrdersResourceServiceService} from "../../../core/services/orders-resource-service.service";
+import {OrderModel} from "../../../core/model/order.model";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 
 
 
@@ -15,36 +17,16 @@ import {OrdersResourceServiceService} from "../../../core/services/orders-resour
 export class OrderComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   displayedColumns: string[] = ['firstName', 'lastName', 'date', 'type', 'phone', 'action'];
-  dataSource: MatTableDataSource<{ date: Date; firstName: string; lastName: string; phone: string; id: string; type: number }>;
+  dataSource: MatTableDataSource<{ date: { nanoseconds: number; seconds: number }; firstName: string; lastName: string; phone: string; dob: Date; examined: boolean; id: string; type: number; email?: string }>;
   date = new FormControl(new Date());
   selectedDate: Date;
   isSpinnerVisible: boolean;
   clients:any =[];
 
-  constructor(private orderResourceServiceService: OrdersResourceServiceService) {
+  constructor(private orderResourceServiceService: OrdersResourceServiceService,private http: HttpClient) {
   }
 
   ngOnInit(): void {
-
-    // this.orderResourceServiceService.getAllOrders().subscribe(
-    //   (response) => {
-    //     this.dataSource = new MatTableDataSource(response);
-    //     this.dataSource.sortingDataAccessor = (item, property) => {
-    //       switch (property) {
-    //         case 'date': {
-    //           // @ts-ignore
-    //           return new Date(item.date.seconds * 1000);
-    //         }
-    //         default:
-    //           return item[property];
-    //       }
-    //     };
-    //
-    //     this.dataSource.sort = this.sort;
-    //     this.isSpinnerVisible = false
-    //
-    //   }
-    // )
     const currentDate = new Date()
     currentDate.setHours(0, 0, 0, 0)
     this.setOrdersByDate(currentDate);
@@ -84,13 +66,35 @@ export class OrderComponent implements OnInit {
     });
   }
 
-  onExaminedButtonClick(id: string, state: boolean) {
+  onExaminedButtonClick(id: string, state: boolean, index: number) {
     this.isSpinnerVisible = true
     this.orderResourceServiceService.updateExamined(id, state).then(r => {
+      this.sentEmailNotification(index);
     }).catch(err => {
       console.log(err);
     });
 
+  }
+
+  sentEmailNotification(index:number){
+    let person: OrderModel;
+    if(index+2 <= this.clients.length-1){
+      person = this.clients[index+2];
+    }else{
+      person = this.clients[index];
+    }
+
+    const email = person?.email;
+    if(email){
+      const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+      this.http.post('https://formspree.io/f/mbjpbdjr',
+        { name: 'Istvan', replyto: email, message: 'OBJEDNANO' },
+        { 'headers': headers }).subscribe(
+        response => {
+          console.log(response);
+        }
+      );
+    }
   }
 
 }

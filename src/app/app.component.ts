@@ -1,33 +1,24 @@
-import {Component, OnInit} from '@angular/core';
-import {AuthService} from "./modules/core/services/auth.service";
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from './modules/core/services/auth.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'Ambulancia-app';
-  public currentUser: any;
   userStatus = this.firebaseService.userStatus;
 
   constructor(private firebaseService: AuthService) {
     this.userStatus = this.firebaseService.userStatus;
-
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.firebaseService.userChanges();
-
-    this.firebaseService.userStatusChanges.subscribe(x => this.userStatus = x);
-    console.log(this.userStatus)
+    this.firebaseService.userStatusChanges.subscribe((x) => (this.userStatus = x));
   }
 
-  logout(){
+  logout() {
     this.firebaseService.logOut();
-
   }
-
-
-
 }

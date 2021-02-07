@@ -20,6 +20,10 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 
 import {MatCardModule} from "@angular/material/card";
 import { FooterComponent } from './components/footer/footer.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {HttpClientModule} from "@angular/common/http";
+import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
+
 
 @NgModule({
   declarations: [SpinnerComponent,LoginComponent, FooterComponent],
@@ -39,7 +43,7 @@ import { FooterComponent } from './components/footer/footer.component';
     MatRadioModule,
     ToastrModule.forRoot(),
     MatToolbarModule,
-
+    HttpClientModule,
     MatCardModule,
   ],
   exports:[
@@ -57,9 +61,10 @@ import { FooterComponent } from './components/footer/footer.component';
     SpinnerComponent,
     MatRadioModule,
     MatToolbarModule,
-
+    MatDialogModule,
     MatCardModule,
-    FooterComponent 
+    FooterComponent,
+    HttpClientModule,
   ]
 })
 export class CoreModule { }

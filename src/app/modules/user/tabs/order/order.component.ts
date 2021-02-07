@@ -4,6 +4,8 @@ import {MatTableDataSource} from "@angular/material/table";
 import {FormControl} from "@angular/forms";
 import {OrdersResourceServiceService} from "../../../core/services/orders-resource-service.service";
 import {MatDatepickerInputEvent} from "@angular/material/datepicker";
+import {MatDialog} from "@angular/material/dialog";
+import {CreateOrderComponent} from "./components/create-order/create-order.component";
 
 @Component({
   selector: 'app-order',
@@ -13,12 +15,12 @@ import {MatDatepickerInputEvent} from "@angular/material/datepicker";
 export class OrderComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   displayedColumns: string[] = ['firstName', 'lastName', 'date', 'type', 'phone'];
-  dataSource: MatTableDataSource<{ date: Date; firstName: string; lastName: string; phone: string; id: string; type: number }>;
+  dataSource: MatTableDataSource<{ date: { nanoseconds: number; seconds: number }; firstName: string; lastName: string; phone: string; dob: Date; examined: boolean; id: string; type: number; email?: string }>;
   date = new FormControl(new Date());
   selectedDate: Date;
   isSpinnerVisible: boolean;
 
-  constructor(private orderResourceServiceService: OrdersResourceServiceService) {
+  constructor(private orderResourceServiceService: OrdersResourceServiceService,private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -57,14 +59,14 @@ export class OrderComponent implements OnInit {
     });
   }
 
-  onExaminedButtonClick(id: string, state: boolean) {
-    this.isSpinnerVisible = true
-    this.orderResourceServiceService.updateExamined(id, state).then(r => {
-    }).catch(err => {
-      console.log(err);
+  openOrderModal(){
+    const dialogRef = this.dialog.open(CreateOrderComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
     });
-
   }
+
+
 
 }
 

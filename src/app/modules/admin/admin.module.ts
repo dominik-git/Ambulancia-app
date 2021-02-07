@@ -10,15 +10,17 @@ import {RegisterComponent} from "./tabs/persons-list/components/register/registe
 import {MatRadioModule} from "@angular/material/radio";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import { HomeComponent } from './tabs/home/home.component';
+import { UpdateModalComponent } from './tabs/persons-list/components/update-modal/update-modal.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
-  declarations: [OrderComponent, PersonsListComponent, AdminComponent, RegisterComponent, ListComponent, HomeComponent],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    CoreModule,
-  ]
+  declarations: [OrderComponent, PersonsListComponent, AdminComponent, RegisterComponent, ListComponent, HomeComponent, UpdateModalComponent],
+    imports: [
+        CommonModule,
+        AdminRoutingModule,
+        CoreModule,
+    ]
 })
 export class AdminModule {
 }

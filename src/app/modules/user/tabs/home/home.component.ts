@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from "../../../core/services/auth.service";
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  fullName: string = "";
 
-  constructor() { }
+  constructor(private authService: AuthService) {
 
-  ngOnInit(): void {
   }
 
+  ngOnInit(): void {
+    this.fullName = this.authService.getFullName();
+  }
 }

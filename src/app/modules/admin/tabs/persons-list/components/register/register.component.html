@@ -53,7 +53,10 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
-      <button mat-raised-button color="primary" [disabled]="!signUpForm.valid">Vytvorit</button>
+      <button mat-raised-button color="primary" [disabled]="!signUpForm.valid" *ngIf="isUpdateMode">Zmenit</button>
+      <button mat-raised-button color="primary" [disabled]="!signUpForm.valid" *ngIf="!isUpdateMode">Vytvorit</button>
+
+
     </form>
   </mat-card-content>
 </mat-card>

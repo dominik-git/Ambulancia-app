@@ -2,6 +2,10 @@ table {
   width: 100%;
 }
 
-.my-class{
-  background: #007bff;
+.disabled {
+  background-color: lightgrey !important;
+  color: #737373 !important;
+  &:hover{
+    cursor:not-allowed
+  }
 }

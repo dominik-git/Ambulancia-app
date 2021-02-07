@@ -1,0 +1,49 @@
+<mat-card>
+  <mat-card-title>Registrácia nového pacienta</mat-card-title>
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit()">
+      <h4>mat-select</h4>
+      <mat-form-field appearance="fill">
+        <mat-label>Favorite food</mat-label>
+        <mat-select [(ngModel)]="selectedOderType" name="type">
+          <mat-option *ngFor="let type of types" [value]="type.value">
+            {{ type.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- Date Picker -->
+      <!--      <mat-form-field appearance="fill">-->
+      <!--        <mat-label>Choose a date</mat-label>-->
+      <!--        &lt;!&ndash;čo je to za dátum?&ndash;&gt;-->
+      <!--        <input matInput type="datetime" id="defaultRegisterDate" placeholder="Date" name="selectedDate"  [matDatepicker]="picker"-->
+      <!--               [(ngModel)]="selectedDate" required>-->
+      <!--        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+      <!--        <mat-datepicker #picker></mat-datepicker>-->
+      <!--      </mat-form-field>-->
+
+      <mat-form-field>
+        <input
+          matInput
+          [ngxMatDatetimePicker]="picker"
+          placeholder="Choose a date"
+          name="selectedDate"
+          [(ngModel)]="selectedDate"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <ngx-mat-datetime-picker
+          #picker
+          [showSpinners]="true"
+          [showSeconds]="false"
+          [stepHour]="1"
+          [stepMinute]="15"
+          color="accent"
+          [hideTime]="false"
+        >
+        </ngx-mat-datetime-picker>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary">Vytvorit</button>
+    </form>
+  </mat-card-content>
+</mat-card>
