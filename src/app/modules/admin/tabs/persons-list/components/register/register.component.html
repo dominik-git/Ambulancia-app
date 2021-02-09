@@ -1,8 +1,8 @@
 <mat-card>
   <mat-card-title>Registrácia nového pacienta</mat-card-title>
   <mat-card-content>
-    <form class="text-center border border-light p-5" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-      <div class="form-row mb-4">
+    <form class="text-center border border-light p-4" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+      <div class="form-row">
         <div class="col">
           <!-- First name -->
           <mat-form-field appearance="fill">
@@ -22,7 +22,7 @@
       </div>
       <!-- Gender-->
       <mat-radio-group aria-label="Select an option" formControlName="gender">
-        <mat-radio-button style="margin-right: 20px;" value="muz">Muz</mat-radio-button>
+        <mat-radio-button style="margin: 0 10px 10px 0;"  value="muz">Muz</mat-radio-button>
         <mat-radio-button value="zena">Zena</mat-radio-button>
       </mat-radio-group>
       <!-- Telephone-->

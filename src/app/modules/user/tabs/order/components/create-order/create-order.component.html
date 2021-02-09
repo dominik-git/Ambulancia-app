@@ -1,10 +1,10 @@
 <mat-card>
-  <mat-card-title>Registrácia nového pacienta</mat-card-title>
+  <mat-card-title>Nová objednávka</mat-card-title>
   <mat-card-content>
     <form (ngSubmit)="onSubmit()">
-      <h4>mat-select</h4>
+      <h4>Vyberte typ vyšetrenia a dátum</h4>
       <mat-form-field appearance="fill">
-        <mat-label>Favorite food</mat-label>
+        <mat-label>Typ vyšetrenia</mat-label>
         <mat-select [(ngModel)]="selectedOderType" name="type">
           <mat-option *ngFor="let type of types" [value]="type.value">
             {{ type.viewValue }}
@@ -26,7 +26,7 @@
         <input
           matInput
           [ngxMatDatetimePicker]="picker"
-          placeholder="Choose a date"
+          placeholder="Dátum"
           name="selectedDate"
           [(ngModel)]="selectedDate"
         />
@@ -43,7 +43,7 @@
         </ngx-mat-datetime-picker>
       </mat-form-field>
 
-      <button mat-raised-button color="primary">Vytvorit</button>
+      <button mat-raised-button>Objednať</button>
     </form>
   </mat-card-content>
 </mat-card>
