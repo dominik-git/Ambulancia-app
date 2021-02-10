@@ -41,17 +41,18 @@ footer {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 100px;
-  line-height: 100px;
+  line-height: 40px;
+  color: white;
 }
 
 
 
 .primary-lighter {
-  background: $blue-dark;
+  background: $blue-dark; //order admin
   color: $white;
 }
 
 nav, footer{
-  background: $blue-dark;
+  background: $blue-dark6;
 }
 

@@ -1,5 +1,14 @@
+@import "../../../../../../src/variables.scss";
+
 table {
-  width: 100%;
+  width: 90%;
+  margin: 1% 0 0 5%;
+}
+
+button{
+  background-color:$blue-dark6;
+  color:$white;
+  margin: 0 0 0 2%;
 }
 
 .disabled {
@@ -8,4 +17,8 @@ table {
   &:hover{
     cursor:not-allowed
   }
+}
+
+mat-form-field{
+  padding: 1% 0 0 3%;
 }

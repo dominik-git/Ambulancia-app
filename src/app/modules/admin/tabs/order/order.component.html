@@ -12,34 +12,34 @@
 
 
   <ng-container matColumnDef="firstName">
-    <th mat-header-cell *matHeaderCellDef> firstName</th>
+    <th mat-header-cell *matHeaderCellDef> Meno</th>
     <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
   </ng-container>
 
   <ng-container matColumnDef="lastName">
-    <th mat-header-cell *matHeaderCellDef> lastName</th>
+    <th mat-header-cell *matHeaderCellDef> Priezvisko</th>
     <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
   </ng-container>
 
   <ng-container matColumnDef="date">
-    <th mat-header-cell *matHeaderCellDef > date</th>
+    <th mat-header-cell *matHeaderCellDef > Dátum</th>
     <td mat-cell *matCellDef="let element"> {{element.date.seconds * 1000 | date: 'dd MMM., yyyy, HH:mm' }} </td>
   </ng-container>
 
   <ng-container matColumnDef="type">
-    <th mat-header-cell *matHeaderCellDef> type</th>
+    <th mat-header-cell *matHeaderCellDef> Typ vyšetrenia</th>
     <td mat-cell *matCellDef="let element"> {{getTypeOfVisit(element.type)}} </td>
   </ng-container>
 
   <ng-container matColumnDef="phone">
-    <th mat-header-cell *matHeaderCellDef> Phone</th>
-    <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+    <th mat-header-cell *matHeaderCellDef> E-mail</th>
+    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
   </ng-container>
 
   <ng-container matColumnDef="action">
     <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let element; let i = index">
-      <button mat-raised-button class="primary-lighter" (click)="onExaminedButtonClick(element.id,true, i)" *ngIf="!element.examined">Vybaveny</button>
+      <button mat-raised-button (click)="onExaminedButtonClick(element.id,true, i)" *ngIf="!element.examined">Vybaveny</button>
     </td>
   </ng-container>
 
