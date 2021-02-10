@@ -59,6 +59,8 @@ export class OrdersResourceServiceService {
 
   }
 
+
+
   addNewOrder(type: number, date:Date){
     const myDate = date.toLocaleString()
     const seconds = +new Date(myDate) /1000;
@@ -67,7 +69,6 @@ export class OrdersResourceServiceService {
     let newOrder = new OrderModel();
     newOrder.type = type;
     newOrder.examined = false;
-    // const seconds = date.getTime() / 1000;
     const timestamp = {
       nanoseconds: 0,
       seconds
@@ -76,7 +77,6 @@ export class OrdersResourceServiceService {
     newOrder.email = user.username;
     newOrder.firstName = user.firstName;
     newOrder.lastName = user.lastName;
-    console.log(newOrder);
     ordersCollection.doc().set({...newOrder})
       .then(() => {
         console.log("Document successfully written!");
@@ -84,7 +84,30 @@ export class OrdersResourceServiceService {
       .catch( (error) => {
         console.error("Error writing document: ", error);
       });
+  }
 
+  addNewOrderToPacient(type: number, date:Date, patient ){
+    const myDate = date.toLocaleString()
+    const seconds = +new Date(myDate) /1000;
+    const ordersCollection = this.firestore.collection('orders');
+    let newOrder = new OrderModel();
+    newOrder.type = type;
+    newOrder.examined = false;
+    const timestamp = {
+      nanoseconds: 0,
+      seconds
+    };
+    newOrder.date = timestamp;
+    newOrder.email = patient.email;
+    newOrder.firstName = patient.firstName;
+    newOrder.lastName = patient.lastName;
+    ordersCollection.doc().set({...newOrder})
+      .then(() => {
+        console.log("Document successfully written!");
+      } )
+      .catch( (error) => {
+        console.error("Error writing document: ", error);
+      });
   }
 
 

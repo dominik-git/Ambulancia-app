@@ -8,7 +8,7 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatButtonModule} from "@angular/material/button";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {LoginComponent} from "./tabs/login/login.component";
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
@@ -23,6 +23,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {HttpClientModule} from "@angular/common/http";
 import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
+import {MatSelectModule} from "@angular/material/select";
+import {NgxMatMomentModule} from "@angular-material-components/moment-adapter";
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 
 @NgModule({
@@ -45,6 +48,22 @@ import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-mat
     MatToolbarModule,
     HttpClientModule,
     MatCardModule,
+    FormsModule,
+    MatSelectModule,
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatInputModule,
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    NgxMatMomentModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatCheckboxModule
   ],
   exports:[
     CommonModule,
@@ -65,6 +84,22 @@ import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-mat
     MatCardModule,
     FooterComponent,
     HttpClientModule,
+    FormsModule,
+    MatSelectModule,
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatInputModule,
+    NgxMatDatetimePickerModule,
+    NgxMatTimepickerModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    NgxMatMomentModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatCheckboxModule
   ]
 })
 export class CoreModule { }

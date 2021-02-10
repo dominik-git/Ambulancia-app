@@ -12,15 +12,22 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import { HomeComponent } from './tabs/home/home.component';
 import { UpdateModalComponent } from './tabs/persons-list/components/update-modal/update-modal.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import { CreateOrderComponent } from './tabs/persons-list/components/create-order/create-order.component';
+import {MatSelectModule} from "@angular/material/select";
+import {FormsModule} from "@angular/forms";
+import {NgxMatDatetimePickerModule} from "@angular-material-components/datetime-picker";
 
 
 @NgModule({
-  declarations: [OrderComponent, PersonsListComponent, AdminComponent, RegisterComponent, ListComponent, HomeComponent, UpdateModalComponent],
-    imports: [
-        CommonModule,
-        AdminRoutingModule,
-        CoreModule,
-    ]
+  declarations: [OrderComponent, PersonsListComponent, AdminComponent, RegisterComponent, ListComponent, HomeComponent, UpdateModalComponent, CreateOrderComponent],
+  imports: [
+    CommonModule,
+    AdminRoutingModule,
+    CoreModule,
+    MatSelectModule,
+    FormsModule,
+    NgxMatDatetimePickerModule,
+  ]
 })
 export class AdminModule {
 }
