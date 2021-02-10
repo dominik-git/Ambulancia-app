@@ -1,22 +1,22 @@
 
 <mat-card>
-  <mat-card-title>Login</mat-card-title>
+  <mat-card-title>Prihlásenie</mat-card-title>
 <mat-card-content>
 <form (ngSubmit)="login(loginForm.value)" [formGroup]="loginForm">
 <p>
   <mat-form-field>
-    <input type="email" name="email" matInput placeholder="Username" formControlName="email">
+    <input type="email" name="email" matInput placeholder="E-mail" formControlName="email">
   </mat-form-field>
 </p>
 
 <p>
   <mat-form-field>
-    <input type="password" name="password" matInput placeholder="Password" formControlName="password">
+    <input type="password" name="password" matInput placeholder="Heslo" formControlName="password">
   </mat-form-field>
 </p>
 
 <div class="button">
-  <button mat-button [disabled]="!loginForm.valid" type="submit">Login</button>
+  <button mat-button [disabled]="!loginForm.valid" type="submit">Prihlásiť sa</button>
 </div>
 
 </form>

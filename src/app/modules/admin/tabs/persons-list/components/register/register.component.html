@@ -1,5 +1,6 @@
 <mat-card>
-  <mat-card-title>Registrácia nového pacienta</mat-card-title>
+  <mat-card-title *ngIf="isUpdateMode">Úprava pacienta</mat-card-title>
+  <mat-card-title *ngIf="!isUpdateMode">Registrácia nového pacienta</mat-card-title>
   <mat-card-content>
     <form class="text-center border border-light p-4" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
       <div class="form-row">
@@ -7,7 +8,7 @@
           <!-- First name -->
           <mat-form-field appearance="fill">
             <mat-label>Meno</mat-label>
-            <input matInput type="text" id="defaultRegisterFormFirstName" placeholder="First name"
+            <input matInput type="text" id="defaultRegisterFormFirstName" placeholder="Meno"
               formControlName="firstName" required>
           </mat-form-field>
         </div>
@@ -15,46 +16,46 @@
           <!-- Last name -->
           <mat-form-field appearance="fill">
             <mat-label>Priezvisko</mat-label>
-            <input matInput type="text" id="defaultRegisterFormLastName" placeholder="Last name"
+            <input matInput type="text" id="defaultRegisterFormLastName" placeholder="Priezvisko"
               formControlName="lastName" required>
           </mat-form-field>
         </div>
       </div>
       <!-- Gender-->
       <mat-radio-group aria-label="Select an option" formControlName="gender">
-        <mat-radio-button style="margin: 0 10px 10px 0;"  value="muz">Muz</mat-radio-button>
-        <mat-radio-button value="zena">Zena</mat-radio-button>
+        <mat-radio-button style="margin: 0 10px 10px 0;"  value="muz">Muž</mat-radio-button>
+        <mat-radio-button value="zena">Žena</mat-radio-button>
       </mat-radio-group>
       <!-- Telephone-->
       <mat-form-field appearance="fill">
-        <mat-label>Telefonne cislo</mat-label>
-        <input matInput type="text" id="defaultRegisterPhonePassword" placeholder="Phone number"
-          formControlName="phone">
+        <mat-label>Telefonné číslo</mat-label>
+        <input matInput type="text" id="defaultRegisterPhonePassword" placeholder="Tel. číslo"
+          formControlName="phone" required>
       </mat-form-field>
       <!-- E-mail -->
       <mat-form-field appearance="fill">
-        <mat-label>Enter your email</mat-label>
+        <mat-label>E-mail</mat-label>
         <input matInput type="email" id="defaultRegisterFormEmail" placeholder="E-mail" formControlName="email"
           required>
       </mat-form-field>
       <!-- Password -->
       <mat-form-field appearance="fill">
         <mat-label>Heslo</mat-label>
-        <input matInput type="password" id="defaultRegisterFormPassword" placeholder="Password"
+        <input matInput type="password" id="defaultRegisterFormPassword" placeholder="Heslo"
           formControlName="password" required>
       </mat-form-field>
       <!-- Date Picker -->
       <mat-form-field appearance="fill">
-        <mat-label>Choose a date</mat-label>
+        <mat-label>Vyberte dátum</mat-label>
         <!--čo je to za dátum?-->
-        <input matInput type="datetime" id="defaultRegisterDate" placeholder="Date" [matDatepicker]="picker"
+        <input matInput type="datetime" id="defaultRegisterDate" placeholder="Dátum" [matDatepicker]="picker"
           formControlName="dob">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
-      <button mat-raised-button color="primary" [disabled]="!signUpForm.valid" *ngIf="isUpdateMode">Zmenit</button>
-      <button mat-raised-button color="primary" [disabled]="!signUpForm.valid" *ngIf="!isUpdateMode">Vytvorit</button>
+      <button mat-raised-button  [disabled]="!signUpForm.valid" *ngIf="isUpdateMode">Zmeniť</button>
+      <button mat-raised-button  [disabled]="!signUpForm.valid" *ngIf="!isUpdateMode">Vytvoriť</button>
 
 
     </form>

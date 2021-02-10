@@ -1,8 +1,12 @@
+@import "../../../../../../../variables.scss";
+
 table {
   width: 90%;
-  margin: 1% 0 0 5%;
+  margin: 1% 0 1% 5%;
 }
 
-.my-class{
-  background: #007bff;
+button{
+  background-color:$blue-dark6;
+  color:$white;
+  margin: 0 0 0 2%;
 }
