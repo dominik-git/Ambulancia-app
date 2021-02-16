@@ -5,7 +5,7 @@
   <mat-datepicker #picker3></mat-datepicker>
 </mat-form-field>
 
-<div *ngIf="clients.length == 0">Prazdny list</div>
+<div *ngIf="clients.length == 0" style="text-align: center;"><h1  class="font-weight-bold">Žiadne objednávky</h1></div>
 
 <table mat-table #table [dataSource]="dataSource" class="mat-elevation-z8" matSort matSortActive="date" matSortDirection="desc" *ngIf="clients.length >0"
 >

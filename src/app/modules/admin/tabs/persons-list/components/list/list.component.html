@@ -15,7 +15,7 @@
 
   <ng-container matColumnDef="dob">
     <th mat-header-cell *matHeaderCellDef > Dátum</th>
-    <td mat-cell *matCellDef="let element"> {{element.dob }}</td>
+    <td mat-cell *matCellDef="let element"> {{element.dob.seconds * 1000 | date: 'dd MMM., yyyy, HH:mm' }}</td>
   </ng-container>
 
 
